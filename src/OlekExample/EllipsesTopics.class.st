@@ -98,6 +98,21 @@ EllipsesTopics >> initialize [
 	self topics: self defaultTopics.
 ]
 
+{ #category : #tools }
+EllipsesTopics >> inspectorVisualization [
+	<inspectorPresentationOrder: 1 title: 'Visualization'>
+	^ self asPresenter
+	
+	
+]
+
+{ #category : #tools }
+EllipsesTopics >> inspectorVisualizationContext: aContext [
+	aContext withoutEvaluator
+	
+	
+]
+
 { #category : #hooks }
 EllipsesTopics >> renderIn: aCanvas [
 	| ellipses labels |
