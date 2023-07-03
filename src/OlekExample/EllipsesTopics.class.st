@@ -9,12 +9,35 @@ Class {
 }
 
 { #category : #'instance creation' }
+EllipsesTopics class >> openComposite [
+	<script>
+	| canvas shape1 shape2 shape3 |
+	canvas := RSCanvas new.
+	shape1:= self new asShape.
+	shape2:= self new asShape.
+	shape3:= self new asShape.
+	canvas addAll: { shape1. shape2. shape3 }.
+	RSGridLayout on: canvas nodes.
+	canvas @ RSCanvasController.
+	^ canvas inspect 
+]
+
+{ #category : #'instance creation' }
 EllipsesTopics class >> openInspector [
 	<script>
 	| builder |
 	builder := self new.
 	builder build.
 	builder canvas inspect
+]
+
+{ #category : #'instance creation' }
+EllipsesTopics class >> openPresenter [
+	<script>
+	| presenter window |
+	presenter := self new asPresenter.
+	window := presenter open.
+	window title: 'My Visualization'.
 ]
 
 { #category : #'instance creation' }
